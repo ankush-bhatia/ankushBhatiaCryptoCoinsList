@@ -63,6 +63,7 @@ final class APIManager: APIManaging {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        urlRequest.timeoutInterval = TimeInterval(APILayerConstants.timeout)
         return urlRequest
     }
 }
