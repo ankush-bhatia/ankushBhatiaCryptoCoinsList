@@ -11,10 +11,10 @@ enum APIPath {
     
     case getCoinsList
     
-    var name: String {
+    var name: String? {
         switch self {
         case .getCoinsList:
-            return "/"
+            return nil
         }
     }
 }

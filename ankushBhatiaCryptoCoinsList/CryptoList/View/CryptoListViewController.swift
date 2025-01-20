@@ -11,6 +11,7 @@ final class CryptoListViewController: UIViewController {
 
     // MARK: - Properties
     private let viewModel: CryptoListViewModel
+    private var loadingViewController: LoadingViewController?
     
     // MARK: - Initializers
     init(viewModel: CryptoListViewModel) {
@@ -26,6 +27,51 @@ final class CryptoListViewController: UIViewController {
     override func loadView() {
         view = View()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateFromViewModel()
+        bindViewModel()
+        viewModel.getCoins()
+    }
+    
+    // MARK: - Methods
+    private func updateFromViewModel() {
+        switch viewModel.state {
+            case .loading:
+                showLoading()
+            case .loaded(let items):
+                loadingViewController?.willMove(toParent: nil)
+                loadingViewController?.view.removeFromSuperview()
+                loadingViewController?.removeFromParent()
+                loadingViewController = nil
+                (view as? View)?.configure(with: items)
+            case .error:
+                showError()
+        }
+    }
+    
+    private func bindViewModel() {
+        viewModel.didUpdate = { [weak self] in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.updateFromViewModel()
+            }
+        }
+    }
+    
+    private func showError() {
+    }
+    
+    private func showLoading() {
+        let loadingViewController = LoadingViewController()
+        addChild(loadingViewController)
+        loadingViewController.view.frame = view.bounds
+        loadingViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(loadingViewController.view)
+        loadingViewController.didMove(toParent: self)
+        self.loadingViewController = loadingViewController
+    }
 }
 
 // MARK: - View
@@ -33,6 +79,10 @@ extension CryptoListViewController {
     
     final class View: UIView {
         
+        // MARK: - Properties
+        var cryptoList: [CryptoItem] = []
+        
+        // MARK: - Initializers
         init() {
             super.init(frame: .zero)
             commonInit()
@@ -45,7 +95,14 @@ extension CryptoListViewController {
         // MARK: - View Elements
         private lazy var tableView: UITableView = {
             let tableView = UITableView()
+            tableView.refreshControl = refreshControl
             return tableView
+        }()
+        
+        private lazy var refreshControl: UIRefreshControl = {
+            let refreshControl = UIRefreshControl()
+            refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+            return refreshControl
         }()
         
         // MARK: - View Initialization
@@ -57,6 +114,10 @@ extension CryptoListViewController {
         
         // MARK: - Methods
         private func setupViewHierarchy() {
+            
+            // Tableview
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.dataSource = self
             addSubview(tableView)
         }
         
@@ -70,8 +131,29 @@ extension CryptoListViewController {
             ])
         }
         
-        func configure() {
+        func configure(with cryptoList: [CryptoItem]) {
+            self.cryptoList = cryptoList
             tableView.reloadData()
         }
+        
+        func endRefreshing() {
+            tableView.refreshControl?.endRefreshing()
+        }
+        
+        @objc
+        func refreshData() {
+            (next as? CryptoListViewController)?.viewModel.getCoins()
+        }
+    }
+}
+
+extension CryptoListViewController.View: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        cryptoList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
     }
 }

@@ -13,10 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var window: UIWindow? = UIWindow()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        let viewModel = CryptoListViewModel()
+        let viewModel = ViewModelFactory.makeCryptoListViewModel()
         let navigationController = UINavigationController(rootViewController: CryptoListViewController(viewModel: viewModel))
         navigationController.view.backgroundColor = .white
-        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.prefersLargeTitles = false
         navigationController.navigationBar.barTintColor = .white
         navigationController.navigationBar.isTranslucent = false
         window!.rootViewController = navigationController

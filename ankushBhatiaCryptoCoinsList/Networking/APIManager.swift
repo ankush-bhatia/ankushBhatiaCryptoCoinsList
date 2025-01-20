@@ -31,27 +31,31 @@ final class APIManager: APIManaging {
             completion(.failure(.invalidURL))
             return
         }
-        urlSession.dataTask(with: urlRequest) { [unowned self] responseData, urlResponse, error in
-            if let data = responseData {
-                let response: Value
-                do {
-                    response = try decoder.decode(Value.self, from: data)
-                } catch {
-                    completion(.failure(.parsingError))
-                    return
+        urlSession
+            .dataTask(with: urlRequest) { [unowned self] responseData, urlResponse, error in
+                if let data = responseData {
+                    let response: Value
+                    do {
+                        response = try decoder.decode(Value.self, from: data)
+                    } catch {
+                        completion(.failure(.parsingError))
+                        return
+                    }
+                    completion(.success(response))
+                } else {
+                    completion(.failure(.networkError))
                 }
-                completion(.success(response))
-            } else {
-                completion(.failure(.networkError))
             }
-        }
+            .resume()
     }
     
     private func urlRequest(for request: APIRequest) -> URLRequest? {
         var urlComponents = URLComponents()
         urlComponents.scheme = APILayerConstants.scheme
         urlComponents.host = APILayerConstants.host
-        urlComponents.path = request.path.name
+        if let path = request.path.name {
+            urlComponents.path = path
+        }
         urlComponents.queryItems = request.queryItems
         guard let url = urlComponents.url else {
             return nil
