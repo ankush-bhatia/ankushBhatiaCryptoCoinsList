@@ -49,6 +49,7 @@ final class CryptoListViewController: UIViewController {
             case .error:
                 showError()
         }
+        (view as? View)?.endRefreshing()
     }
     
     private func bindViewModel() {
@@ -116,6 +117,7 @@ extension CryptoListViewController {
         private func setupViewHierarchy() {
             
             // Tableview
+            tableView.registerClassWithDefaultIdentifier(cellClass: CyptoListItemTableViewCell.self)
             tableView.rowHeight = UITableView.automaticDimension
             tableView.dataSource = self
             addSubview(tableView)
@@ -154,6 +156,8 @@ extension CryptoListViewController.View: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        let cell: CyptoListItemTableViewCell =  tableView.dequeueReusableCell(withIdentifier: CyptoListItemTableViewCell.defaultIdentifier) as! CyptoListItemTableViewCell
+        cell.configure(cryptoList[indexPath.row])
+        return cell
     }
 }

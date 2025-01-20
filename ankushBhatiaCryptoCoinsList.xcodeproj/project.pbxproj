@@ -22,6 +22,9 @@
 		964396E32D3ED0F200FD53B2 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396E22D3ED0F200FD53B2 /* TypeAlias.swift */; };
 		964396E52D3ED21A00FD53B2 /* CryptoListViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396E42D3ED21A00FD53B2 /* CryptoListViewState.swift */; };
 		964396E82D3EDD1A00FD53B2 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396E72D3EDD1A00FD53B2 /* LoadingViewController.swift */; };
+		964396EA2D3EDED700FD53B2 /* CyptoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396E92D3EDED700FD53B2 /* CyptoListItemTableViewCell.swift */; };
+		964396ED2D3EDF2000FD53B2 /* Tableview+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396EC2D3EDF2000FD53B2 /* Tableview+Extensions.swift */; };
+		964396EF2D3EDF8800FD53B2 /* TableviewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396EE2D3EDF8800FD53B2 /* TableviewCell+Extensions.swift */; };
 		966BF0932D3E2F0500AA29C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF0922D3E2F0500AA29C5 /* AppDelegate.swift */; };
 		966BF0952D3E2F0500AA29C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF0942D3E2F0500AA29C5 /* SceneDelegate.swift */; };
 		966BF09C2D3E2F0600AA29C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF09B2D3E2F0600AA29C5 /* Assets.xcassets */; };
@@ -66,6 +69,9 @@
 		964396E22D3ED0F200FD53B2 /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		964396E42D3ED21A00FD53B2 /* CryptoListViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewState.swift; sourceTree = "<group>"; };
 		964396E72D3EDD1A00FD53B2 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		964396E92D3EDED700FD53B2 /* CyptoListItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyptoListItemTableViewCell.swift; sourceTree = "<group>"; };
+		964396EC2D3EDF2000FD53B2 /* Tableview+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tableview+Extensions.swift"; sourceTree = "<group>"; };
+		964396EE2D3EDF8800FD53B2 /* TableviewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableviewCell+Extensions.swift"; sourceTree = "<group>"; };
 		966BF08F2D3E2F0500AA29C5 /* ankushBhatiaCryptoCoinsList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ankushBhatiaCryptoCoinsList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF0922D3E2F0500AA29C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966BF0942D3E2F0500AA29C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +189,15 @@
 			path = Laoding;
 			sourceTree = "<group>";
 		};
+		964396EB2D3EDF1100FD53B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				964396EC2D3EDF2000FD53B2 /* Tableview+Extensions.swift */,
+				964396EE2D3EDF8800FD53B2 /* TableviewCell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		966BF0862D3E2F0500AA29C5 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +221,7 @@
 		966BF0912D3E2F0500AA29C5 /* ankushBhatiaCryptoCoinsList */ = {
 			isa = PBXGroup;
 			children = (
+				964396EB2D3EDF1100FD53B2 /* Extensions */,
 				964396E62D3EDD0F00FD53B2 /* Laoding */,
 				964396E12D3ED0E900FD53B2 /* Utils */,
 				964396DD2D3ECEE600FD53B2 /* Factories */,
@@ -256,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */,
+				964396E92D3EDED700FD53B2 /* CyptoListItemTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,11 +415,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964396ED2D3EDF2000FD53B2 /* Tableview+Extensions.swift in Sources */,
 				966BF0932D3E2F0500AA29C5 /* AppDelegate.swift in Sources */,
 				964396C32D3EAE7000FD53B2 /* APIRequest.swift in Sources */,
 				96C2AF762D3E5BD9004C0F52 /* CryptoListViewModel.swift in Sources */,
 				964396D72D3ECBC500FD53B2 /* CryptoListReponse.swift in Sources */,
+				964396EA2D3EDED700FD53B2 /* CyptoListItemTableViewCell.swift in Sources */,
 				964396DC2D3ECC6B00FD53B2 /* CryptoListNetworkDataSource.swift in Sources */,
+				964396EF2D3EDF8800FD53B2 /* TableviewCell+Extensions.swift in Sources */,
 				964396E52D3ED21A00FD53B2 /* CryptoListViewState.swift in Sources */,
 				964396E02D3ECF0800FD53B2 /* ViewModelFactory.swift in Sources */,
 				964396D42D3ECAB000FD53B2 /* CryptoListRepository.swift in Sources */,
