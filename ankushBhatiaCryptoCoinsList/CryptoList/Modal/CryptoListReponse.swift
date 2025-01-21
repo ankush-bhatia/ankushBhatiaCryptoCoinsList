@@ -13,5 +13,11 @@ struct CryptoItem: Decodable {
     let symbol: String
     let isNew: Bool
     let isActive: Bool
-    let type: String
+    let type: CryptoType
+}
+
+enum CryptoType: String, Decodable {
+    
+    case coin
+    case token
 }

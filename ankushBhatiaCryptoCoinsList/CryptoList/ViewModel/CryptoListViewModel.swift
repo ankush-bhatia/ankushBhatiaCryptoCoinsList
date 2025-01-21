@@ -67,11 +67,11 @@ final class CryptoListViewModel {
                         case .inactiveCoins:
                             isCoinIncluded = coin.isActive == false
                         case .onlyTokens:
-                            isCoinIncluded = coin.type == "token"
+                            isCoinIncluded = coin.type == .token
                         case .newCoins:
                             isCoinIncluded = coin.isNew == true
                         case .onlyCoins:
-                            isCoinIncluded = coin.type == "coin"
+                            isCoinIncluded = coin.type == .coin
                     }
                     if !isCoinIncluded {
                         break

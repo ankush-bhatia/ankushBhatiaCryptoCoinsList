@@ -153,8 +153,6 @@ extension CryptoListViewController {
         
         // MARK: - Methods
         private func setupViewHierarchy() {
-            
-            // Tableview
             tableView.rowHeight = UITableView.automaticDimension
             tableView.dataSource = self
             addSubview(tableView)
