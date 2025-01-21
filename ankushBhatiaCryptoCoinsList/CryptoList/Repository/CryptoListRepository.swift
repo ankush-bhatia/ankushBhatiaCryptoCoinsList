@@ -24,7 +24,11 @@ struct CryptoListRepository: CryptoListRepositoryProtocol {
                 .geCryptoCoins { result in
                     switch result {
                         case .success(let cryptoCoins):
-                            completion(.success(cryptoCoins))
+                            if cryptoCoins.isEmpty && !Reachability.isConnectedToNetwork() {
+                                completion(.failure(.noInternetConnection))
+                            } else {
+                                completion(.success(cryptoCoins))
+                            }
                         case .failure:
                             completion(.failure(.noInternetConnection))
                     }

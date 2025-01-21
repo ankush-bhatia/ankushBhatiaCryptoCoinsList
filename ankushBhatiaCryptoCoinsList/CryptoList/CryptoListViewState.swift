@@ -11,5 +11,5 @@ enum CryptoListViewState {
  
     case loading
     case loaded
-    case error
+    case error(error: Error)
 }

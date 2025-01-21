@@ -66,8 +66,11 @@ final class CryptoListViewController: UIViewController {
                 loadingViewController = nil
                 (view as? View)?.configure()
                 navigationItem.rightBarButtonItem?.isHidden = viewModel.cryptoList.count == 0
-            case .error:
-                showError()
+                if viewModel.cryptoList.isEmpty {
+                    showError(error: APIError.noDataAvailable)
+                }
+            case .error(let error):
+                showError(error: error)
         }
         (view as? View)?.endRefreshing()
     }
@@ -81,7 +84,21 @@ final class CryptoListViewController: UIViewController {
         }
     }
     
-    private func showError() {
+    private func showError(error: Error) {
+        var title: String = ""
+        if let error = error as? APIError {
+            title = error.title
+        } else if let error = error as? DBError {
+            
+        }
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Retry", style: .default) { _ in
+            self.viewModel.resetFilters()
+            self.viewModel.getCoins()
+            alertController.dismiss(animated: true)
+        }
+        alertController.addAction(alertAction)
+        present(alertController, animated: true)
     }
     
     private func showLoading() {
@@ -216,7 +233,7 @@ extension CryptoListViewController {
         func configure() {
             tableView.reloadData()
             filterItemsCollectionView.reloadData()
-            filterItemsCollectionView.isHidden = viewModel.filteredCryptoList.count == 0
+            filterView.isHidden = viewModel.filteredCryptoList.count == 0
         }
         
         func endRefreshing() {

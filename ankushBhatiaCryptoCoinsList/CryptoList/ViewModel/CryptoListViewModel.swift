@@ -40,8 +40,8 @@ final class CryptoListViewModel {
                         self.cryptoList = items
                         self.filteredCryptoList = items
                         self.state = .loaded
-                    case .failure:
-                        self.state = .error
+                    case .failure(let error):
+                        self.state = .error(error: error)
                 }
             }
     }
