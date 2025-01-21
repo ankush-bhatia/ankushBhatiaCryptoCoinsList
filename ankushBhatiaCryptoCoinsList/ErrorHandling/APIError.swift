@@ -12,4 +12,5 @@ enum APIError: Error {
     case networkError
     case parsingError
     case invalidURL
+    case noInternetConnection
 }

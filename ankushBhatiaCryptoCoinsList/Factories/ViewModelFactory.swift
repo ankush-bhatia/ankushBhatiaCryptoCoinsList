@@ -12,7 +12,9 @@ struct ViewModelFactory {
     static func makeCryptoListViewModel() -> CryptoListViewModel {
         let apiManager = APIManager.shared
         let remoteDataSource = CryptoListNetworkDataSource(apiManager: apiManager)
-        let repo = CryptoListRepository(remoteDataSource: remoteDataSource)
+        let dbDataSource = CryptoListDBDataSource()
+        let repo = CryptoListRepository(remoteDataSource: remoteDataSource,
+                                        dbDataSource: dbDataSource)
         let getCryptoListCoinsUseCase = CryptoListGetCoinsUseCase(repository: repo)
         let viewModel = CryptoListViewModel(getCryptoListCoinsUseCase: getCryptoListCoinsUseCase)
         return viewModel
