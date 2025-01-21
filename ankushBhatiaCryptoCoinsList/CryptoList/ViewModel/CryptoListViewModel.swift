@@ -12,6 +12,7 @@ final class CryptoListViewModel {
     // MARK: - Properties
     private let getCryptoListCoinsUseCase: CryptoListGetCoinsUseCase
     var didUpdate: EmptyCompletion?
+    var filterItems: [CoinListFilterItem]
     
     var state: CryptoListViewState = .loading {
         didSet {
@@ -22,6 +23,9 @@ final class CryptoListViewModel {
     // MARK: - Initialisers
     init(getCryptoListCoinsUseCase: CryptoListGetCoinsUseCase) {
         self.getCryptoListCoinsUseCase = getCryptoListCoinsUseCase
+        filterItems = CoinListFilterType
+            .allCases
+            .compactMap { CoinListFilterItem(type: $0, isSelected: false) }
     }
     
     // MARK: - Methods
