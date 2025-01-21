@@ -17,4 +17,8 @@ struct ViewModelFactory {
         let viewModel = CryptoListViewModel(getCryptoListCoinsUseCase: getCryptoListCoinsUseCase)
         return viewModel
     }
+    
+    static func makeCryptoSearchViewModel(cryptoItems: [CryptoItem]) -> CryptoSearchViewModel {
+        CryptoSearchViewModel(coinItems: cryptoItems)
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  CyptoListItemTableViewCell.swift
+//  CryptoListItemTableViewCell.swift
 //  ankushBhatiaCryptoCoinsList
 //
 //  Created by ANKUSH BHATIA on 1/21/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CyptoListItemTableViewCell: UITableViewCell {
+class CryptoListItemTableViewCell: UITableViewCell {
     
     // MARK: - UI Elements
     private lazy var titleLabel: UILabel = {

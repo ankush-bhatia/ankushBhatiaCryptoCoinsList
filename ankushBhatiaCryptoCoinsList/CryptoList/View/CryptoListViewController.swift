@@ -22,6 +22,12 @@ final class CryptoListViewController: UIViewController {
         return label
     }()
     
+    private lazy var searchBarButtonItem: UIBarButtonItem = {
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
+        searchButton.tintColor = .white
+        return searchButton
+    }()
+    
     // MARK: - Initializers
     init(viewModel: CryptoListViewModel) {
         self.viewModel = viewModel
@@ -41,9 +47,8 @@ final class CryptoListViewController: UIViewController {
         super.viewDidLoad()
         let titleItem = UIBarButtonItem(customView: pageTitleLabel)
         navigationItem.leftBarButtonItem = titleItem
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
-        searchButton.tintColor = .white
-        navigationItem.rightBarButtonItem = searchButton
+        navigationItem.rightBarButtonItem = searchBarButtonItem
+        navigationItem.rightBarButtonItem?.isHidden = true
         updateFromViewModel()
         bindViewModel()
         viewModel.getCoins()
@@ -60,6 +65,7 @@ final class CryptoListViewController: UIViewController {
                 loadingViewController?.removeFromParent()
                 loadingViewController = nil
                 (view as? View)?.configure()
+                navigationItem.rightBarButtonItem?.isHidden = viewModel.cryptoList.count == 0
             case .error:
                 showError()
         }
@@ -90,7 +96,10 @@ final class CryptoListViewController: UIViewController {
     
     @objc
     private func searchTapped() {
-        
+        let cryptoItems = viewModel.cryptoList
+        let viewModel = ViewModelFactory.makeCryptoSearchViewModel(cryptoItems: cryptoItems)
+        let searchViewController = CoinSearchViewController(viewModel: viewModel)
+        navigationController?.pushViewController(searchViewController, animated: true)
     }
 }
 
@@ -123,7 +132,7 @@ extension CryptoListViewController {
         private lazy var tableView: UITableView = {
             let tableView = UITableView()
             tableView.refreshControl = refreshControl
-            tableView.registerClassWithDefaultIdentifier(cellClass: CyptoListItemTableViewCell.self)
+            tableView.registerClassWithDefaultIdentifier(cellClass: CryptoListItemTableViewCell.self)
             return tableView
         }()
         
@@ -230,7 +239,7 @@ extension CryptoListViewController.View: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CyptoListItemTableViewCell =  tableView.dequeueReusableCell(withIdentifier: CyptoListItemTableViewCell.defaultIdentifier) as! CyptoListItemTableViewCell
+        let cell: CryptoListItemTableViewCell = tableView.dequeueReusableCellWithDefaultIdentifier()
         cell.configure(viewModel.filteredCryptoList[indexPath.row])
         return cell
     }
