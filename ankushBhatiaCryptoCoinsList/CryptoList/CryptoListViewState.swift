@@ -10,6 +10,6 @@ import Foundation
 enum CryptoListViewState {
  
     case loading
-    case loaded([CryptoItem])
+    case loaded
     case error
 }

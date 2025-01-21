@@ -25,8 +25,7 @@ final class CryptoListViewController: UIViewController {
     
     // MARK: - View Life Cycle
     override func loadView() {
-        let filterItems = viewModel.filterItems
-        view = View(filterItems: filterItems)
+        view = View(viewModel: viewModel)
     }
     
     override func viewDidLoad() {
@@ -42,12 +41,12 @@ final class CryptoListViewController: UIViewController {
         switch viewModel.state {
             case .loading:
                 showLoading()
-            case .loaded(let items):
+            case .loaded:
                 loadingViewController?.willMove(toParent: nil)
                 loadingViewController?.view.removeFromSuperview()
                 loadingViewController?.removeFromParent()
                 loadingViewController = nil
-                (view as? View)?.configure(with: items)
+                (view as? View)?.configure()
             case .error:
                 showError()
         }
@@ -83,13 +82,12 @@ extension CryptoListViewController {
     final class View: UIView {
         
         // MARK: - Properties
-        var cryptoList: [CryptoItem] = []
-        var filterItems: [CoinListFilterItem]
+        private let viewModel: CryptoListViewModel
         private var filterCollectionViewHeight: NSLayoutConstraint!
         
         // MARK: - Initializers
-        init(filterItems: [CoinListFilterItem]) {
-            self.filterItems = filterItems
+        init(viewModel: CryptoListViewModel) {
+            self.viewModel = viewModel
             super.init(frame: .zero)
             commonInit()
         }
@@ -190,9 +188,10 @@ extension CryptoListViewController {
             ])
         }
         
-        func configure(with cryptoList: [CryptoItem]) {
-            self.cryptoList = cryptoList
+        func configure() {
             tableView.reloadData()
+            filterItemsCollectionView.reloadData()
+            filterItemsCollectionView.isHidden = viewModel.filteredCryptoList.count == 0
         }
         
         func endRefreshing() {
@@ -201,7 +200,9 @@ extension CryptoListViewController {
         
         @objc
         func refreshData() {
-            (next as? CryptoListViewController)?.viewModel.getCoins()
+            // Reset all the filters
+            viewModel.resetFilters()
+            viewModel.getCoins()
         }
     }
 }
@@ -209,12 +210,12 @@ extension CryptoListViewController {
 extension CryptoListViewController.View: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cryptoList.count
+        viewModel.filteredCryptoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CyptoListItemTableViewCell =  tableView.dequeueReusableCell(withIdentifier: CyptoListItemTableViewCell.defaultIdentifier) as! CyptoListItemTableViewCell
-        cell.configure(cryptoList[indexPath.row])
+        cell.configure(viewModel.filteredCryptoList[indexPath.row])
         return cell
     }
 }
@@ -224,17 +225,17 @@ extension CryptoListViewController.View: UICollectionViewDataSource,
                                          UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        filterItems.count
+        viewModel.filterItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CoinFilterItemCollectionViewCell = collectionView.dequeueReusableCellWithDefaultIdentifier(indexPath: indexPath)
-        cell.configure(with: filterItems[indexPath.row])
+        cell.configure(with: viewModel.filterItems[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let filterItem = filterItems[indexPath.row]
+        let filterItem = viewModel.filterItems[indexPath.row]
         let horizontalPadding: CGFloat = 16
         let verticalPadding: CGFloat = 4
         let textSize = filterItem.type.name.size(withAttributes: [
@@ -247,7 +248,8 @@ extension CryptoListViewController.View: UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        filterItems[indexPath.row].isSelected.toggle()
+        viewModel.udpateFilteredCoins(indexPath: indexPath)
         collectionView.reloadItems(at: [indexPath])
+        tableView.reloadData()
     }
 }
