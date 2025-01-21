@@ -13,6 +13,15 @@ final class CryptoListViewController: UIViewController {
     private let viewModel: CryptoListViewModel
     private var loadingViewController: LoadingViewController?
     
+    // MARK: - UI Elements
+    private lazy var pageTitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = LocalizedString("coinsList.title")
+        label.font = .Title.semibold
+        label.textColor = .white
+        return label
+    }()
+    
     // MARK: - Initializers
     init(viewModel: CryptoListViewModel) {
         self.viewModel = viewModel
@@ -30,7 +39,11 @@ final class CryptoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Coin"
+        let titleItem = UIBarButtonItem(customView: pageTitleLabel)
+        navigationItem.leftBarButtonItem = titleItem
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(searchTapped))
+        searchButton.tintColor = .white
+        navigationItem.rightBarButtonItem = searchButton
         updateFromViewModel()
         bindViewModel()
         viewModel.getCoins()
@@ -73,6 +86,11 @@ final class CryptoListViewController: UIViewController {
         view.addSubview(loadingViewController.view)
         loadingViewController.didMove(toParent: self)
         self.loadingViewController = loadingViewController
+    }
+    
+    @objc
+    private func searchTapped() {
+        
     }
 }
 

@@ -15,10 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let viewModel = ViewModelFactory.makeCryptoListViewModel()
         let navigationController = UINavigationController(rootViewController: CryptoListViewController(viewModel: viewModel))
-        navigationController.view.backgroundColor = .white
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = .purple
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController.navigationBar.prefersLargeTitles = false
-        navigationController.navigationBar.barTintColor = .white
         navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.standardAppearance = navBarAppearance
+        navigationController.navigationBar.scrollEdgeAppearance = navBarAppearance;
         window!.rootViewController = navigationController
         window!.makeKeyAndVisible()
         return true

@@ -101,6 +101,13 @@ class CyptoListItemTableViewCell: UITableViewCell {
     func configure(_ item: CryptoItem) {
         titleLabel.text = item.name
         descriptionLabel.text = item.symbol
+        if item.isActive {
+            titleLabel.textColor = .black
+            descriptionLabel.textColor = .black
+        } else {
+            titleLabel.textColor = .lightGray
+            descriptionLabel.textColor = .lightGray
+        }
         newCryptoImageView.isHidden = !item.isNew
         setCryptoTypeImageView(item: item)
     }
