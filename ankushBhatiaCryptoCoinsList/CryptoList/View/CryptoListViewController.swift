@@ -89,7 +89,7 @@ final class CryptoListViewController: UIViewController {
         if let error = error as? APIError {
             title = error.title
         } else if let error = error as? DBError {
-            
+            title = error.title
         }
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Retry", style: .default) { _ in

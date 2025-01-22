@@ -11,4 +11,13 @@ enum DBError: Error {
     
     case unableToSaveData
     case unableToGetData
+    
+    var title: String {
+        switch self {
+            case .unableToGetData:
+                return "Unable to get data"
+            case .unableToSaveData:
+                return "Unable to save data"
+        }
+    }
 }
