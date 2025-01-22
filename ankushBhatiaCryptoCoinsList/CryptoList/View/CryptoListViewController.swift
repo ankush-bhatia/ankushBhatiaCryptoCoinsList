@@ -291,7 +291,9 @@ extension CryptoListViewController.View: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.udpateFilteredCoins(indexPath: indexPath)
-        collectionView.reloadItems(at: [indexPath])
-        tableView.reloadData()
+        UIView.performWithoutAnimation {
+            collectionView.reloadItems(at: [indexPath])
+        }
+        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
     }
 }
