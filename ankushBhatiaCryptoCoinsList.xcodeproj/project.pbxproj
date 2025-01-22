@@ -50,10 +50,10 @@
 		9691FC212D40F84900E95D12 /* CoinSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FC202D40F84900E95D12 /* CoinSearchViewModelTests.swift */; };
 		96C2AF732D3E5B63004C0F52 /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */; };
 		96C2AF762D3E5BD9004C0F52 /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AF752D3E5BD9004C0F52 /* CryptoListViewModel.swift */; };
+		96C35E162D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96C35E142D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodeld */; };
 		96D1FBC92D40168D00C33ADC /* CryptoSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBC82D40168D00C33ADC /* CryptoSearchViewModel.swift */; };
 		96D1FBCB2D401A8E00C33ADC /* CryptoListDBDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBCA2D401A8E00C33ADC /* CryptoListDBDataSource.swift */; };
 		96D1FBD22D401C8A00C33ADC /* CrpytoListCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBD12D401C8A00C33ADC /* CrpytoListCoreDataStack.swift */; };
-		96D1FBD72D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBD52D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodeld */; };
 		96D1FBD92D40224900C33ADC /* DBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBD82D40224900C33ADC /* DBError.swift */; };
 		96D1FBDB2D40268000C33ADC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBDA2D40268000C33ADC /* Reachability.swift */; };
 /* End PBXBuildFile section */
@@ -123,10 +123,10 @@
 		9691FC202D40F84900E95D12 /* CoinSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinSearchViewModelTests.swift; sourceTree = "<group>"; };
 		96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		96C2AF752D3E5BD9004C0F52 /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
+		96C35E152D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CrpytoListCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		96D1FBC82D40168D00C33ADC /* CryptoSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSearchViewModel.swift; sourceTree = "<group>"; };
 		96D1FBCA2D401A8E00C33ADC /* CryptoListDBDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListDBDataSource.swift; sourceTree = "<group>"; };
 		96D1FBD12D401C8A00C33ADC /* CrpytoListCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrpytoListCoreDataStack.swift; sourceTree = "<group>"; };
-		96D1FBD62D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CrpytoListCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		96D1FBD82D40224900C33ADC /* DBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBError.swift; sourceTree = "<group>"; };
 		96D1FBDA2D40268000C33ADC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -369,8 +369,8 @@
 		96D1FBCC2D401B5C00C33ADC /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				96C35E142D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodeld */,
 				96D1FBD12D401C8A00C33ADC /* CrpytoListCoreDataStack.swift */,
-				96D1FBD52D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -537,8 +537,8 @@
 				964396CB2D3EB39100FD53B2 /* APILayerConstants.swift in Sources */,
 				964396E82D3EDD1A00FD53B2 /* LoadingViewController.swift in Sources */,
 				96D1FBD22D401C8A00C33ADC /* CrpytoListCoreDataStack.swift in Sources */,
-				96D1FBD72D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodeld in Sources */,
 				964396C92D3EAF0F00FD53B2 /* APIManaging.swift in Sources */,
+				96C35E162D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodeld in Sources */,
 				962833A42D3FB85500C754AB /* Icon.swift in Sources */,
 				962833942D3F814A00C754AB /* CollectionView+Extension.swift in Sources */,
 				96D1FBC92D40168D00C33ADC /* CryptoSearchViewModel.swift in Sources */,
@@ -900,14 +900,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		96D1FBD52D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodeld */ = {
+		96C35E142D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				96D1FBD62D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodel */,
+				96C35E152D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 96D1FBD62D401E8F00C33ADC /* CrpytoListCoreDataModel.xcdatamodel */;
+			currentVersion = 96C35E152D410DED00DDAD52 /* CrpytoListCoreDataModel.xcdatamodel */;
 			name = CrpytoListCoreDataModel.xcdatamodeld;
-			path = /Users/ankushbhatia/Projects/ankushBhatiaCryptoCoinsList/ankushBhatiaCryptoCoinsList/Database/CrpytoListCoreDataModel.xcdatamodeld;
+			path = CrpytoListCoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
