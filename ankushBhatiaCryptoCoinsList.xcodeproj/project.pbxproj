@@ -47,6 +47,7 @@
 		9691FC182D40DB6200E95D12 /* CryptoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FC172D40DB6200E95D12 /* CryptoListViewModelTests.swift */; };
 		9691FC1A2D40DBF200E95D12 /* MockCryptoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FC192D40DBF200E95D12 /* MockCryptoListRepository.swift */; };
 		9691FC1F2D40DDE600E95D12 /* CryptoListJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9691FC1E2D40DDE600E95D12 /* CryptoListJSON.json */; };
+		9691FC212D40F84900E95D12 /* CoinSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FC202D40F84900E95D12 /* CoinSearchViewModelTests.swift */; };
 		96C2AF732D3E5B63004C0F52 /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */; };
 		96C2AF762D3E5BD9004C0F52 /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AF752D3E5BD9004C0F52 /* CryptoListViewModel.swift */; };
 		96D1FBC92D40168D00C33ADC /* CryptoSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBC82D40168D00C33ADC /* CryptoSearchViewModel.swift */; };
@@ -119,6 +120,7 @@
 		9691FC172D40DB6200E95D12 /* CryptoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModelTests.swift; sourceTree = "<group>"; };
 		9691FC192D40DBF200E95D12 /* MockCryptoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCryptoListRepository.swift; sourceTree = "<group>"; };
 		9691FC1E2D40DDE600E95D12 /* CryptoListJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoListJSON.json; sourceTree = "<group>"; };
+		9691FC202D40F84900E95D12 /* CoinSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinSearchViewModelTests.swift; sourceTree = "<group>"; };
 		96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		96C2AF752D3E5BD9004C0F52 /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
 		96D1FBC82D40168D00C33ADC /* CryptoSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSearchViewModel.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				9691FC1B2D40DDAE00E95D12 /* Resources */,
 				9691FC172D40DB6200E95D12 /* CryptoListViewModelTests.swift */,
+				9691FC202D40F84900E95D12 /* CoinSearchViewModelTests.swift */,
 				9691FC192D40DBF200E95D12 /* MockCryptoListRepository.swift */,
 			);
 			path = ankushBhatiaCryptoCoinsListTests;
@@ -555,6 +558,7 @@
 			files = (
 				9691FC1A2D40DBF200E95D12 /* MockCryptoListRepository.swift in Sources */,
 				9691FC182D40DB6200E95D12 /* CryptoListViewModelTests.swift in Sources */,
+				9691FC212D40F84900E95D12 /* CoinSearchViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

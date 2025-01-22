@@ -11,7 +11,7 @@ final class CryptoSearchViewModel {
     
     // MARK: - Properties
     var didUpdate: EmptyCompletion?
-    private let coinItems: [CryptoItem]
+    private(set) var coinItems: [CryptoItem]
     private(set) var filteredCoinItems: [CryptoItem] {
         didSet {
             didUpdate?()
