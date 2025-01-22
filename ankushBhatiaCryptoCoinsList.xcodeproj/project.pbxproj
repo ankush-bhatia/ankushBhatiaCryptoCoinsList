@@ -29,7 +29,7 @@
 		964396CB2D3EB39100FD53B2 /* APILayerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396CA2D3EB39100FD53B2 /* APILayerConstants.swift */; };
 		964396D12D3ECA6300FD53B2 /* CryptoListGetCoinsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396D02D3ECA6300FD53B2 /* CryptoListGetCoinsUseCase.swift */; };
 		964396D42D3ECAB000FD53B2 /* CryptoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396D32D3ECAB000FD53B2 /* CryptoListRepository.swift */; };
-		964396D72D3ECBC500FD53B2 /* CryptoListReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396D62D3ECBC500FD53B2 /* CryptoListReponse.swift */; };
+		964396D72D3ECBC500FD53B2 /* CryptoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396D62D3ECBC500FD53B2 /* CryptoItem.swift */; };
 		964396DC2D3ECC6B00FD53B2 /* CryptoListNetworkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396DB2D3ECC6B00FD53B2 /* CryptoListNetworkDataSource.swift */; };
 		964396E02D3ECF0800FD53B2 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396DF2D3ECF0800FD53B2 /* ViewModelFactory.swift */; };
 		964396E32D3ED0F200FD53B2 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964396E22D3ED0F200FD53B2 /* TypeAlias.swift */; };
@@ -42,9 +42,11 @@
 		966BF0952D3E2F0500AA29C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF0942D3E2F0500AA29C5 /* SceneDelegate.swift */; };
 		966BF09C2D3E2F0600AA29C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 966BF09B2D3E2F0600AA29C5 /* Assets.xcassets */; };
 		966BF09F2D3E2F0600AA29C5 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 966BF09E2D3E2F0600AA29C5 /* Base */; };
-		966BF0AA2D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF0A92D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests.swift */; };
 		966BF0B42D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF0B32D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITests.swift */; };
 		966BF0B62D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966BF0B52D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITestsLaunchTests.swift */; };
+		9691FC182D40DB6200E95D12 /* CryptoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FC172D40DB6200E95D12 /* CryptoListViewModelTests.swift */; };
+		9691FC1A2D40DBF200E95D12 /* MockCryptoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9691FC192D40DBF200E95D12 /* MockCryptoListRepository.swift */; };
+		9691FC1F2D40DDE600E95D12 /* CryptoListJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9691FC1E2D40DDE600E95D12 /* CryptoListJSON.json */; };
 		96C2AF732D3E5B63004C0F52 /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */; };
 		96C2AF762D3E5BD9004C0F52 /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C2AF752D3E5BD9004C0F52 /* CryptoListViewModel.swift */; };
 		96D1FBC92D40168D00C33ADC /* CryptoSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FBC82D40168D00C33ADC /* CryptoSearchViewModel.swift */; };
@@ -95,7 +97,7 @@
 		964396CA2D3EB39100FD53B2 /* APILayerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILayerConstants.swift; sourceTree = "<group>"; };
 		964396D02D3ECA6300FD53B2 /* CryptoListGetCoinsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListGetCoinsUseCase.swift; sourceTree = "<group>"; };
 		964396D32D3ECAB000FD53B2 /* CryptoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListRepository.swift; sourceTree = "<group>"; };
-		964396D62D3ECBC500FD53B2 /* CryptoListReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListReponse.swift; sourceTree = "<group>"; };
+		964396D62D3ECBC500FD53B2 /* CryptoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoItem.swift; sourceTree = "<group>"; };
 		964396DB2D3ECC6B00FD53B2 /* CryptoListNetworkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListNetworkDataSource.swift; sourceTree = "<group>"; };
 		964396DF2D3ECF0800FD53B2 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		964396E22D3ED0F200FD53B2 /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
@@ -111,10 +113,12 @@
 		966BF09E2D3E2F0600AA29C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		966BF0A02D3E2F0600AA29C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966BF0A52D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ankushBhatiaCryptoCoinsListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		966BF0A92D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ankushBhatiaCryptoCoinsListTests.swift; sourceTree = "<group>"; };
 		966BF0AF2D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ankushBhatiaCryptoCoinsListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		966BF0B32D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ankushBhatiaCryptoCoinsListUITests.swift; sourceTree = "<group>"; };
 		966BF0B52D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ankushBhatiaCryptoCoinsListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9691FC172D40DB6200E95D12 /* CryptoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModelTests.swift; sourceTree = "<group>"; };
+		9691FC192D40DBF200E95D12 /* MockCryptoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCryptoListRepository.swift; sourceTree = "<group>"; };
+		9691FC1E2D40DDE600E95D12 /* CryptoListJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoListJSON.json; sourceTree = "<group>"; };
 		96C2AF722D3E5B63004C0F52 /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
 		96C2AF752D3E5BD9004C0F52 /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
 		96D1FBC82D40168D00C33ADC /* CryptoSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSearchViewModel.swift; sourceTree = "<group>"; };
@@ -199,7 +203,7 @@
 		964396D52D3ECBB100FD53B2 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				964396D62D3ECBC500FD53B2 /* CryptoListReponse.swift */,
+				964396D62D3ECBC500FD53B2 /* CryptoItem.swift */,
 				962833992D3F820400C754AB /* CoinListFilterType.swift */,
 				9628339B2D3F836F00C754AB /* CoinListFilterItem.swift */,
 			);
@@ -301,7 +305,9 @@
 		966BF0A82D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests */ = {
 			isa = PBXGroup;
 			children = (
-				966BF0A92D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests.swift */,
+				9691FC1B2D40DDAE00E95D12 /* Resources */,
+				9691FC172D40DB6200E95D12 /* CryptoListViewModelTests.swift */,
+				9691FC192D40DBF200E95D12 /* MockCryptoListRepository.swift */,
 			);
 			path = ankushBhatiaCryptoCoinsListTests;
 			sourceTree = "<group>";
@@ -313,6 +319,14 @@
 				966BF0B52D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListUITestsLaunchTests.swift */,
 			);
 			path = ankushBhatiaCryptoCoinsListUITests;
+			sourceTree = "<group>";
+		};
+		9691FC1B2D40DDAE00E95D12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9691FC1E2D40DDE600E95D12 /* CryptoListJSON.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		96C2AF702D3E5B47004C0F52 /* CryptoList */ = {
@@ -429,6 +443,7 @@
 					};
 					966BF0A42D3E2F0600AA29C5 = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 						TestTargetID = 966BF08E2D3E2F0500AA29C5;
 					};
 					966BF0AE2D3E2F0600AA29C5 = {
@@ -473,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9691FC1F2D40DDE600E95D12 /* CryptoListJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +513,7 @@
 				964396C32D3EAE7000FD53B2 /* APIRequest.swift in Sources */,
 				962833AB2D3FC87D00C754AB /* Strings+Extension.swift in Sources */,
 				96C2AF762D3E5BD9004C0F52 /* CryptoListViewModel.swift in Sources */,
-				964396D72D3ECBC500FD53B2 /* CryptoListReponse.swift in Sources */,
+				964396D72D3ECBC500FD53B2 /* CryptoItem.swift in Sources */,
 				962833982D3F818F00C754AB /* CoinFilterItemCollectionViewCell.swift in Sources */,
 				9628339E2D3F87FA00C754AB /* UIFont+Extension.swift in Sources */,
 				962833A22D3F8E0A00C754AB /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
@@ -537,7 +553,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				966BF0AA2D3E2F0600AA29C5 /* ankushBhatiaCryptoCoinsListTests.swift in Sources */,
+				9691FC1A2D40DBF200E95D12 /* MockCryptoListRepository.swift in Sources */,
+				9691FC182D40DB6200E95D12 /* CryptoListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +784,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -775,6 +793,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ankush.ankushBhatiaCryptoCoinsListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ankushBhatiaCryptoCoinsList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ankushBhatiaCryptoCoinsList";
@@ -786,6 +805,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

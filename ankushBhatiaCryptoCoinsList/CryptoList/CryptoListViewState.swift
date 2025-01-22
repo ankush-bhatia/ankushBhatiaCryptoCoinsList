@@ -7,9 +7,22 @@
 
 import Foundation
 
-enum CryptoListViewState {
- 
+enum CryptoListViewState: Equatable {
+    
     case loading
     case loaded
     case error(error: Error)
+    
+    static func == (lhs: CryptoListViewState, rhs: CryptoListViewState) -> Bool {
+        switch (lhs, rhs) {
+        case (.loading, .loading):
+            return true
+        case (.loaded, .loaded):
+            return true
+        case (.error, .error):
+            return true
+        default:
+            return false
+        }
+    }
 }
